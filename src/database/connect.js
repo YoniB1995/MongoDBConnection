@@ -16,10 +16,10 @@ MongoClient.connect(url,(err,db)=>{
     // })
 //======================== find One / All ==================================/
 
-    // dbo.collection("animals").find({age:{$gte:20}},((err, result) => {
+    // dbo.collection("animals").find({age:{$gt:20}}).toArray((err, result) => {
     // if (err) throw err;
     // console.log(result);
-    // db.close();}))
+    // db.close();})
     
 //======================== INSERT ONE ==================================/
 //     const myobj = { name: "Company Inc", age: 26 };
@@ -38,7 +38,7 @@ MongoClient.connect(url,(err,db)=>{
 //   })
 
   //======================== Update One ==================================/
-  const myQuery = {name:"yosef"}
+//   const myQuery = {name:"yosef"}
 // const newupdateQuery = {$set:{name:"aschalin"}};
 //   dbo.collection("animals").updateOne(myQuery,newupdateQuery, (err, res)=> {
 //     if (err) throw err;
@@ -46,15 +46,25 @@ MongoClient.connect(url,(err,db)=>{
 //     db.close();
 //   })
  //======================== Order By ==================================/
-  const queryOrderBy = 
-  dbo.collection("animals").find().toArray( (err, res)=> {
+//   const queryOrderBy = {name:1}
+//   dbo.collection("animals").find().sort(queryOrderBy).toArray( (err, res)=> {
+//     if (err) throw err;
+//     console.log("All Documents are ordered");
+//     console.log(res)
+//     db.close();
+//   })
+
+ //======================== Order By ==================================/
+
+//  /   const queryOrderBy = {name:1}
+  dbo.collection("animals").estimatedDocumentCount(((err, res)=> {
     if (err) throw err;
-    console.log("All Documents are ordered");
     console.log(res)
+    
+    
     db.close();
   })
-
-    });
+)});
 
 
 module.exports = MongoClient 
