@@ -1,5 +1,6 @@
 const express = require('express');
-const MongoClient = require('./src/database/connect')
+// const MongoClient = require('./src/database/connect')
+const mongoose = require('./src/database/schema')
 const app = express();
 
 
