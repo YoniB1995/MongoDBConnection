@@ -6,12 +6,56 @@ const url = 'mongodb://localhost:27017'
 MongoClient.connect(url,(err,db)=>{
     if (err) throw err;
     const dbo = db.db("mongoPractice")
-    dbo.createCollection("customers",(err,res)=>{
-        if (err) throw err;
-        console.log('Collection Created');
-        db.close();
-    })
-})
+
+//======================== createCollection ==================================/
+
+    // dbo.createCollection("customers",(err,res)=>{
+    //     if (err) throw err;
+    //     console.log('Collection Created');
+    //     db.close();
+    // })
+//======================== find One / All ==================================/
+
+    // dbo.collection("animals").find({age:{$gte:20}},((err, result) => {
+    // if (err) throw err;
+    // console.log(result);
+    // db.close();}))
+    
+//======================== INSERT ONE ==================================/
+//     const myobj = { name: "Company Inc", age: 26 };
+//   dbo.collection("customers").insertOne(myobj, function(err, res) {
+//     if (err) throw err;
+//     console.log("1 document inserted");
+//     db.close();
+//   })
+
+//======================== delete One ==================================/
+// const myQuery = {_id:"6108e5b7461bb64f58436b7d"};
+//   dbo.collection("animals").deleteOne(myQuery, (err, res)=> {
+//     if (err) throw err;
+//     console.log("1 document deleted");
+//     db.close();
+//   })
+
+  //======================== Update One ==================================/
+  const myQuery = {name:"yosef"}
+// const newupdateQuery = {$set:{name:"aschalin"}};
+//   dbo.collection("animals").updateOne(myQuery,newupdateQuery, (err, res)=> {
+//     if (err) throw err;
+//     console.log("1 document updated");
+//     db.close();
+//   })
+ //======================== Order By ==================================/
+  const queryOrderBy = 
+  dbo.collection("animals").find().toArray( (err, res)=> {
+    if (err) throw err;
+    console.log("All Documents are ordered");
+    console.log(res)
+    db.close();
+  })
+
+    });
+
 
 module.exports = MongoClient 
 
