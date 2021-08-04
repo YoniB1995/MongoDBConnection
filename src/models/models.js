@@ -19,35 +19,35 @@ return {userSchema,User,user1}
 }
 
 
-const breakfastMinMax = async()=>{
+// const breakfastMinMax = async()=>{
 
-    const breakfastSchema = new Schema({
-        eggs:{
-            type:Number,
-            min:[6,'Too few eggs'], // validation error message.
-            max:12
-        },
-        drink:{
-            type:String,
-            enum:['Coffee','Tea'],
-            required: ()=>{
-                return this.eggs >3;
-            }
-        }
-    })
+//     const breakfastSchema = new Schema({
+//         eggs:{
+//             type:Number,
+//             min:[6,'Too few eggs'], // validation error message.
+//             max:12
+//         },
+//         drink:{
+//             type:String,
+//             enum:['Coffee','Tea'],
+//             required: ()=>{
+//                 return this.eggs >3;
+//             }
+//         }
+//     })
 
-    const Meal = mongoose.model("Meal",breakfastSchema)
-    const meal1 = new Meal({eggs:8,drink:'Coffee'})
+//     const Meal = mongoose.model("Meal",breakfastSchema)
+//     const meal1 = new Meal({eggs:8,drink:'Coffee'})
 
-    try {
-    await meal1.save();
-}catch (e){
-    console.log(`Error: ${e._message}`)
-}
+//     try {
+//     await meal1.save();
+// }catch (e){
+//     console.log(`Error: ${e._message}`)
+// }
 
 
-    return {breakfastSchema,Meal,meal1}
-}
+//     return {breakfastSchema,Meal,meal1}
+// }
 
 // const personSchema = mongoose.Schema({
 //     _id: Schema.Types.ObjectId,
@@ -69,7 +69,7 @@ const breakfastMinMax = async()=>{
 
 
 
-module.exports =  breakfastMinMax()
+module.exports =  UserSchema()
 
 
 // UserModel.find() // find all users
