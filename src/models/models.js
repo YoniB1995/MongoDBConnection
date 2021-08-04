@@ -49,4 +49,39 @@ const breakfastMinMax = async()=>{
     return {breakfastSchema,Meal,meal1}
 }
 
+// const personSchema = mongoose.Schema({
+//     _id: Schema.Types.ObjectId,
+//     name: String,
+//     age: Number,
+//     stories: [{ type: Schema.Types.ObjectId, ref: 'Story'}]
+// });
+
+// const storySchema = mongoose.Schema({
+//     author: {type: Schema.Types.ObjectId , ref : 'Person'},
+//     title: String,
+//     fans: [{ type: Schema.Types.ObjectId , ref: 'Person'}]
+// });
+
+// const story = mongoose.model('Story',storySchema);
+// const Person = mongoose.model('Person',personSchema)
+
+
+
+
+
 module.exports =  breakfastMinMax()
+
+
+// UserModel.find() // find all users
+//  .where({firstName: "Shuki"}) // with first name equals to Shuki
+//  .skip(100) // skip the first 100 items
+//  .limit(10) // limit to 10 items
+//  .sort({firstName: 1}) // sort ascending by firstName
+//  .select({firstName: true}) // select firstName only
+//  .exec() // execute the query
+//  .then(docs => {
+//  console.log(docs);
+//  })
+//  .catch(err => {
+//  console.error(err);
+//  })
