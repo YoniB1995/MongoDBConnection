@@ -5,7 +5,7 @@ const {UserSchema,
     breakfastMinMax } = require('../models/models')
 
 const connectoToBe = () => {
-    return mongoose.connect('mongodb+srv://yoni:yoni@cluster0.b7rbb.mongodb.net/test',
+    return mongoose.connect('mongodb+srv://yoni:046344579@cluster0.b7rbb.mongodb.net/test',
  {useNewUrlParser: true},
  { useUnifiedTopology: true })
 
